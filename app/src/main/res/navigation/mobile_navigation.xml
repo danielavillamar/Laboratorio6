@@ -12,14 +12,16 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_gallery"
-            app:destination="@id/nav_gallery" />
+            app:destination="@id/nav_info" />
         <action
-            android:id="@+id/action_nav_home_to_placeholder"
-            app:destination="@id/placeholder" />
+            android:id="@+id/action_nav_home_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@+id/nav_home"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_info"
         android:name="com.example.zvent.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" >
@@ -27,6 +29,40 @@
             android:id="@+id/action_nav_gallery_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
-    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.zvent.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_resultsFragment"
+            app:destination="@+id/nav_home"
+            app:popUpTo="@+id/nav_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.zvent.resultsFragment"
+        android:label="resultsFragment"
+        tools:layout="@layout/fragment_results">
+        <argument
+            android:name="contador"
+            app:argType="string" />
+        <argument
+            android:name="yes"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_resultsFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_resultsFragment_to_registerFragment2"
+            app:destination="@+id/registerFragment"
+            app:popUpTo="@+id/registerFragment" />
+    </fragment>
 
 </navigation>
