@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.example.zvent.databinding.FragmentRegisterBinding
 import com.example.zvent.ui.Invitado
@@ -91,8 +92,8 @@ class RegisterFragment : Fragment() {
                 contador += (invitados[questionIndex].name + ": Missing") /*Llena el conteo de quienes si y quienes no*/
                 if (questionIndex == 9) { /* Al llegar a 10 automaticamente tira a la siguiente actividad*/
                     view!!.findNavController().navigate(RegisterFragmentDirections
-                        .actionRegisterFragmentToResultsFragment(contador, yes)
-                    )
+                        .actionRegisterFragmentToResultsFragment(contador,yes))
+
                     /*questionText1.text = invitados[questionIndex].name
                     questionText2.text = "Phone: " + invitados[questionIndex].number
                     questionText3.text = "Email: " + invitados[questionIndex].email*/
@@ -104,3 +105,10 @@ class RegisterFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 }
+
+
+
+
+
+
+

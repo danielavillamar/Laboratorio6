@@ -36,9 +36,7 @@
         tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/action_registerFragment_to_resultsFragment"
-            app:destination="@+id/nav_home"
-            app:popUpTo="@+id/nav_home"
-            app:popUpToInclusive="true" />
+            app:destination="@+id/resultsFragment" />
         <action
             android:id="@+id/action_registerFragment_to_nav_home"
             app:destination="@id/nav_home"
@@ -60,9 +58,10 @@
             android:id="@+id/action_resultsFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_resultsFragment_to_registerFragment2"
-            app:destination="@+id/registerFragment"
-            app:popUpTo="@+id/registerFragment" />
+            android:id="@+id/action_resultsFragment_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@+id/registerFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>
